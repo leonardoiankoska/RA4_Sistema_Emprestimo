@@ -1,0 +1,120 @@
+FFFFFF                                                                   [100%]
+=================================== FAILURES ===================================
+_____________________________ test_cadastro_valido _____________________________
+
+    def test_cadastro_valido():
+        cadastro = CadastroItens()
+>       item = cadastro.cadastrar("Livro", "Literatura")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_itens.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <cadastro_itens.CadastroItens object at 0x7fd6977b4c20>, nome = 'Livro'
+descricao = 'Literatura'
+
+    def cadastrar(self, nome, descricao=""):
+>       raise NotImplementedError
+E       NotImplementedError
+
+cadastro_itens.py:7: NotImplementedError
+___________________________ test_nome_obrigatorio[] ____________________________
+
+nome = ''
+
+    @pytest.mark.parametrize("nome", ["", "   "])
+    def test_nome_obrigatorio(nome):
+        with pytest.raises(ValueError, match="Nome obrigatório"):
+>           CadastroItens().cadastrar(nome)
+
+test_itens.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <cadastro_itens.CadastroItens object at 0x7fd696cabed0>, nome = ''
+descricao = ''
+
+    def cadastrar(self, nome, descricao=""):
+>       raise NotImplementedError
+E       NotImplementedError
+
+cadastro_itens.py:7: NotImplementedError
+__________________________ test_nome_obrigatorio[   ] __________________________
+
+nome = '   '
+
+    @pytest.mark.parametrize("nome", ["", "   "])
+    def test_nome_obrigatorio(nome):
+        with pytest.raises(ValueError, match="Nome obrigatório"):
+>           CadastroItens().cadastrar(nome)
+
+test_itens.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <cadastro_itens.CadastroItens object at 0x7fd6977d8690>, nome = '   '
+descricao = ''
+
+    def cadastrar(self, nome, descricao=""):
+>       raise NotImplementedError
+E       NotImplementedError
+
+cadastro_itens.py:7: NotImplementedError
+___________________________ test_consulta_existente ____________________________
+
+    def test_consulta_existente():
+        cadastro = CadastroItens()
+>       item = cadastro.cadastrar("Livro")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_itens.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <cadastro_itens.CadastroItens object at 0x7fd6977cd220>, nome = 'Livro'
+descricao = ''
+
+    def cadastrar(self, nome, descricao=""):
+>       raise NotImplementedError
+E       NotImplementedError
+
+cadastro_itens.py:7: NotImplementedError
+__________________________ test_consulta_inexistente ___________________________
+
+    def test_consulta_inexistente():
+>       assert CadastroItens().consultar(999) is None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_itens.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <cadastro_itens.CadastroItens object at 0x7fd6977cd480>, id_item = 999
+
+    def consultar(self, id_item):
+>       raise NotImplementedError
+E       NotImplementedError
+
+cadastro_itens.py:10: NotImplementedError
+________________________________ test_listagem _________________________________
+
+    def test_listagem():
+        cadastro = CadastroItens()
+>       a = cadastro.cadastrar("Livro")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_itens.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <cadastro_itens.CadastroItens object at 0x7fd6977ec3b0>, nome = 'Livro'
+descricao = ''
+
+    def cadastrar(self, nome, descricao=""):
+>       raise NotImplementedError
+E       NotImplementedError
+
+cadastro_itens.py:7: NotImplementedError
+=========================== short test summary info ============================
+FAILED test_itens.py::test_cadastro_valido - NotImplementedError
+FAILED test_itens.py::test_nome_obrigatorio[] - NotImplementedError
+FAILED test_itens.py::test_nome_obrigatorio[   ] - NotImplementedError
+FAILED test_itens.py::test_consulta_existente - NotImplementedError
+FAILED test_itens.py::test_consulta_inexistente - NotImplementedError
+FAILED test_itens.py::test_listagem - NotImplementedError
+6 failed in 0.09s
